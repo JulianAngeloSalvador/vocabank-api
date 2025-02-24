@@ -4,7 +4,7 @@
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc --build",
-    "serve": "tsx watch --include src/"
+    "serve": "tsx watch src/server.ts"
   },
   "keywords": [],
   "author": "",
