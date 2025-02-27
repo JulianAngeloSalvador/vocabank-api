@@ -1,40 +1,168 @@
-@import "globals.css";
-
-[data-location="homepage"] {
-  &.content-container {
-    &:nth-child(1) {
-      display: grid;
-      place-items: center;
-      height: 100%;
-
-      article {
-        width: var(--fluid-width-800);
-        text-wrap: balance;
-        text-align: center;
-        margin-inline: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1.75em;
-        padding-inline: 1em;
-
-        a {
-          margin-top: 1em;
-          outline: 2px solid var(--secondary);
-          outline-offset: 1px;
-          background-color: var(--secondary);
-          color: var(--primary);
-          padding: 0.35em 1.25em;
-          border-radius: 0.25em;
-          transform: translateY(0px);
-          transition: transform var(--fast-transition-eio);
-
-          :is(&:hover, &:focus) {
-            transform: translateY(-6px);
-          }
-        }
-      }
-    }
-  }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+button,
+input,
+fieldset,
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 0.25em;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+svg,
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+:is(h1, .text-headline) {
+  font-size: clamp(4.5rem, 10vw + 1rem, 10rem);
+  font-weight: 900;
+}
+
+:is(h2, .text-headline) {
+  font-size: clamp(4rem, 9vw + 1rem, 6rem);
+  font-weight: 700;
+}
+:is(h2, .text-headline).font-normal {
+  font-weight: 300;
+}
+:is(h2, .text-headline).font-semibold {
+  font-weight: 500;
+}
+
+:is(h3, .text-subheadline) {
+  font-size: clamp(2rem, 6vw + 1rem, 3rem);
+  font-weight: 500;
+}
+:is(h3, .text-subheadline).font-normal {
+  font-weight: 300;
+}
+:is(h3, .text-subheadline).font-bold {
+  font-weight: 700;
+}
+
+:is(h4, .text-title) {
+  font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
+  font-weight: 500;
+}
+:is(h4, .text-title).font-normal {
+  font-weight: 300;
+}
+:is(h4, .text-title).font-semibold {
+  font-weight: 500;
+}
+
+:is(h5, .text-subtitle) {
+  font-size: clamp(1.125rem, 1vw + 1rem, 1.25rem);
+  font-weight: 500;
+}
+:is(h5, .text-subtitle).font-normal {
+  font-weight: 300;
+}
+:is(h5, .text-subtitle).font-semibold {
+  font-weight: 500;
+}
+
+.text-extra-compressed {
+  line-height: 0.85;
+}
+
+.text-compressed {
+  line-height: 1;
+}
+
+.text-semi-compressed {
+  line-height: 1.05;
+}
+
+:root {
+  font-size: 14px;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #c9c7ba;
+  color: #29292b;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 1vw + 1rem, 1.125rem);
+}
+
+main {
+  height: 100%;
+}
+
+[data-location=homepage].content-container:nth-child(1) {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+[data-location=homepage].content-container:nth-child(1) article {
+  width: min(800px, 100% - 1em);
+  text-wrap: balance;
+  text-align: center;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75em;
+  padding-inline: 1em;
+}
+[data-location=homepage].content-container:nth-child(1) article a {
+  margin-top: 1em;
+  outline: 2px solid #29292b;
+  outline-offset: 1px;
+  background-color: #29292b;
+  color: #c9c7ba;
+  padding: 0.35em 1.25em;
+  border-radius: 0.25em;
+  transform: translateY(0px);
+  transition: transform 0.25s ease-in-out;
+}
+:is([data-location=homepage].content-container:nth-child(1) article a:hover, [data-location=homepage].content-container:nth-child(1) article a:focus) {
+  transform: translateY(-6px);
+}
+
+/*# sourceMappingURL=main.css.map */

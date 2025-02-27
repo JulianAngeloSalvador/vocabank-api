@@ -1,0 +1,46 @@
+@use "resets";
+@use "typography";
+@use "palette";
+@use "utilities";
+@use "dimensions";
+@use "motions";
+@use "globals";
+
+[data-location="homepage"] {
+  &.content-container {
+    &:nth-child(1) {
+      display: grid;
+      place-items: center;
+      height: 100%;
+
+      article {
+        width: dimensions.$fluid-width-800-p;
+        text-wrap: balance;
+        text-align: center;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.75em;
+        padding-inline: 1em;
+
+        a {
+          margin-top: 1em;
+          outline: 2px solid palette.$secondary;
+          outline-offset: 1px;
+          background-color: palette.$secondary;
+          color: palette.$primary;
+          padding: 0.35em 1.25em;
+          border-radius: 0.25em;
+          transform: translateY(0px);
+          transition: transform motions.$fast-transition-eio;
+
+          :is(&:hover, &:focus) {
+            transform: translateY(-6px);
+          }
+        }
+      }
+    }
+  }
+}

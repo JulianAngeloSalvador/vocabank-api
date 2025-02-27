@@ -1,0 +1,20 @@
+@use "typography";
+@use "palette";
+
+:root {
+  font-size: 14px;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: palette.$primary;
+  color: palette.$secondary;
+  font-family: typography.$base-font;
+  font-weight: typography.$font-normal;
+  font-size: typography.$text-regular;
+}
+
+main {
+  height: 100%;
+}

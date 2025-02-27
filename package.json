@@ -4,7 +4,8 @@
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc --build",
-    "serve": "tsx watch src/server.ts"
+    "serve": "tsx watch src/server.ts",
+    "scss": "sass --watch src/scss:public/styles"
   },
   "keywords": [],
   "author": "",
