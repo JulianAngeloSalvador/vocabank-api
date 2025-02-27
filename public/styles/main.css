@@ -1,6 +1,6 @@
 @import "globals.css";
 
-.homepage {
+[data-location="homepage"] {
   &.content-container {
     &:nth-child(1) {
       display: grid;
@@ -10,7 +10,6 @@
       article {
         width: var(--fluid-width-800);
         text-wrap: balance;
-        /* outline: var(--guideline-2); */
         text-align: center;
         margin-inline: auto;
         display: flex;
