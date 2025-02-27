@@ -6,3 +6,4 @@ node_modules/
 ###
 .cz-config.js
 src/lib/seed.json
+src/lib/seed-helper.ts
