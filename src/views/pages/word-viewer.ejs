@@ -1,0 +1,28 @@
+<%-include('../layouts/root-head')%>
+
+    <section data-location="words/view" class="content-container">
+        <div class="table-container">
+            <table>
+                <caption class="text-title font-bold"><%= wordData.word %></caption>
+                <thead>
+                    <tr>
+                        <th>Translation</th>
+                        <th>Language</th>
+                        <th>Romanization</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% wordData.translations.map((translation) => { %>
+                    <tr>
+                        <td> <%= translation.translatedWord %> </td>
+                        <td> <%= translation.languageName %> </td>
+                        <td> <%= translation.romanization %> </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+<%-include('../layouts/root-foot')%>
