@@ -4,13 +4,11 @@
         <header>
             <h4>Words</h4>
         </header>
-        <ul class="words-container">
+        <form action="/words/view" method="post" class="words-container">
             <% words.map((word) => { %>
-                <li>
-                    <span data-word><%= word.english_word%> </span>
-                </li>
+            <button type="submit" value="<%= word.word_id%>" name="word"><%= word.english_word%></button>
             <% }) %>
-        </ul>
+        </form>
     </section>
 
 
