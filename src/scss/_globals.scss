@@ -18,3 +18,20 @@ body {
 main {
   height: 100%;
 }
+
+$nav-height: calc(typography.$text-subtitle + 2em);
+
+nav {
+  width: 100%;
+  height: $nav-height;
+  padding-inline: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: palette.$primary-transparent;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}

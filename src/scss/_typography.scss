@@ -17,53 +17,25 @@ $text-subtitle: clamp(1.125rem, 1vw + 1rem, 1.25rem);
 $text-regular: clamp(1rem, 1vw + 1rem, 1.125rem);
 $text-small: clamp(0.85rem, 1vw + 1rem, 1rem);
 
-:is(h1, .text-headline) {
+:is(h1, .text-headline-special) {
   font-size: $text-headline-special;
   font-weight: $font-extrabold;
 }
 :is(h2, .text-headline) {
   font-size: $text-headline;
   font-weight: $font-bold;
-
-  &.font-normal {
-    font-weight: $font-normal;
-  }
-  &.font-semibold {
-    font-weight: $font-semibold;
-  }
 }
 :is(h3, .text-subheadline) {
   font-size: $text-subheadline;
   font-weight: $font-semibold;
-
-  &.font-normal {
-    font-weight: $font-normal;
-  }
-  &.font-bold {
-    font-weight: $font-bold;
-  }
 }
 :is(h4, .text-title) {
   font-size: $text-title;
   font-weight: $font-semibold;
-
-  &.font-normal {
-    font-weight: $font-normal;
-  }
-  &.font-semibold {
-    font-weight: $font-semibold;
-  }
 }
 :is(h5, .text-subtitle) {
   font-size: $text-subtitle;
   font-weight: $font-semibold;
-
-  &.font-normal {
-    font-weight: $font-normal;
-  }
-  &.font-semibold {
-    font-weight: $font-semibold;
-  }
 }
 
 .text-extra-compressed {
@@ -74,4 +46,17 @@ $text-small: clamp(0.85rem, 1vw + 1rem, 1rem);
 }
 .text-semi-compressed {
   line-height: 1.05;
+}
+
+.font-normal {
+  font-weight: $font-normal;
+}
+.font-semibold {
+  font-weight: $font-semibold;
+}
+.font-bold {
+  font-weight: $font-bold;
+}
+.font-extrabold {
+  font-weight: $font-extrabold;
 }
