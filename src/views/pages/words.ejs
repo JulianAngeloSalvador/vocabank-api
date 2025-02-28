@@ -1,0 +1,17 @@
+<%-include('../layouts/root-head')%>
+
+    <section data-location="words" class="content-container">
+        <header>
+            <h4>Words</h4>
+        </header>
+        <ul class="words-container">
+            <% words.map((word) => { %>
+                <li>
+                    <span data-word><%= word.english_word%> </span>
+                </li>
+            <% }) %>
+        </ul>
+    </section>
+
+
+<%-include('../layouts/root-foot')%>
