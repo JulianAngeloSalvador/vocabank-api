@@ -45,11 +45,14 @@
   }
 }
 
+[data-location]:not([data-location="homepage"]) {
+  padding-top: globals.$nav-height;
+}
+
 [data-location="words"] {
   margin-inline: auto;
   width: dimensions.$fluid-width-1500-p;
   padding: 1em 0.25em;
-  padding-top: globals.$nav-height;
 
   header {
     h4 {
@@ -69,22 +72,82 @@
     }
   }
 
-  ul.words-container {
+  form.words-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     padding: 1em 0;
 
-    li {
-      span {
-        display: inline-block;
-        font-size: typography.$text-regular;
+    button {
+      display: inline-block;
+      font-size: typography.$text-regular;
+      text-transform: capitalize;
+      font-weight: typography.$font-semibold;
+      background-color: palette.$secondary;
+      color: palette.$primary;
+      padding: 0.75em 3em;
+      border-radius: 0.25em;
+    }
+  }
+}
+
+[data-location="words/view"] {
+  .table-container {
+    display: grid;
+    place-items: center;
+    width: dimensions.$fluid-width-800-p;
+    margin-inline: auto;
+
+    table {
+      width: 100%;
+      font-size: typography.$text-subtitle;
+      place-items: center;
+
+      caption {
+        text-align: left;
         text-transform: capitalize;
-        font-weight: typography.$font-semibold;
+        margin-bottom: 0.25em;
         background-color: palette.$secondary;
         color: palette.$primary;
-        padding: 0.75em 3em;
-        border-radius: 0.25em;
+        position: relative;
+        isolation: isolate;
+        padding-block: 0.25em;
+
+        &::before {
+          width: 100vw;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          content: "";
+          background-color: inherit;
+          z-index: -1;
+        }
+      }
+
+      thead {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 3px;
+          background-color: palette.$secondary;
+          bottom: 0;
+          left: 0;
+        }
+
+        tr th {
+          padding: 1em;
+          text-align: center;
+        }
+      }
+      tbody {
+        tr td {
+          padding-block: 1em;
+          text-align: center;
+        }
       }
     }
   }
