@@ -3,7 +3,7 @@
     <section data-location="words/view" class="content-container">
         <div class="table-container">
             <table>
-                <caption class="text-title font-bold"><%= wordData.word %></caption>
+                <caption class="text-headline-special font-bold text-extra-compressed"><%= wordData.word %></caption>
                 <thead>
                     <tr>
                         <th>Translation</th>
@@ -14,7 +14,7 @@
                 <tbody>
                 <% wordData.translations.map((translation) => { %>
                     <tr>
-                        <td> <%= translation.translatedWord %> </td>
+                        <td data-translations data-lang="<%= translation.languageCode%>"> <%= translation.translatedWord %> </td>
                         <td> <%= translation.languageName %> </td>
                         <td> <%= translation.romanization %> </td>
                     </tr>
@@ -23,6 +23,31 @@
             </table>
         </div>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const translatedWords = document.querySelectorAll('[data-translations]');
+
+        translatedWords.forEach((word) => {
+            word.addEventListener('click', function() {
+                const text = this.textContent;
+                const lang = this.dataset.lang;
+
+                const utter = new SpeechSynthesisUtterance(text);
+
+                if (lang === "ja-JP") {
+                    utter.lang = "ja-JP"; // Japanese
+                } else if (lang === "fil-PH") {
+                    utter.lang = "tl-PH"; // Filipino
+                } else if (lang === "ko-KR") {
+                    utter.lang = "ko-KR"; // Korean
+                }
+
+                window.speechSynthesis.speak(utter)
+            })
+        })
+    })
+    </script>
 
 
 <%-include('../layouts/root-foot')%>
