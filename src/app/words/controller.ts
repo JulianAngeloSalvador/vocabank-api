@@ -42,6 +42,9 @@ const getWord = (req: Request, res: Response) => {
       // return a populated object w/ optional chaining to handle undefined or null values
       translatedWord: translation.translated_word,
       languageName: language ? language.language_name : "Language not found",
+      languageCode: language
+        ? language.language_code
+        : "No Language Code provided",
       romanization: romanization ? romanization.romanized_text : "N/A",
     };
   });
