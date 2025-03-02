@@ -1,4 +1,5 @@
 @use "palette";
+@use "typography";
 
 *,
 *::before,
@@ -14,6 +15,12 @@ fieldset,
 textarea {
   outline: none;
   border: none;
+}
+
+input,
+button,
+a {
+  font-family: typography.$base-font;
 }
 
 textarea {
@@ -59,4 +66,15 @@ ol {
 
 table {
   border-collapse: collapse;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 100px palette.$primary inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: palette.$secondary !important;
 }

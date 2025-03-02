@@ -6,3 +6,10 @@ $shadow-blur: blur(15px);
 @function levitate($value: 3px) {
   @return translateY($value);
 }
+
+.guideline1 {
+  outline: $guideline-1;
+}
+.guideline2 {
+  outline: $guideline-2;
+}
