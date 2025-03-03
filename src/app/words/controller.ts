@@ -57,4 +57,23 @@ const getWord = (req: Request, res: Response) => {
   res.render("./pages/word-viewer", { wordData });
 };
 
-export { getWords, getWord };
+const searchWord = (req: Request, res: Response) => {
+  // get user input
+  const searchTerm = req.query.word as string;
+
+  // check existence
+  const result = words.find((word) => word.english_word === searchTerm);
+  // word not found
+  if (!result) {
+    return res.redirect("/words");
+  }
+
+  // word available
+  const filteredWords = words.filter((word) =>
+    word.english_word.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  res.render("./pages/words", { words: filteredWords });
+};
+
+export { getWords, getWord, searchWord };
