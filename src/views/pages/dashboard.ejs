@@ -1,0 +1,28 @@
+<%-include('../layouts/root-head')%>
+
+    <section data-location="dashboard" class="content-container">
+        <aside>
+            <header>
+                <%-include('../partials/app-logo')%>
+                <a href="/" class="text-subtitle font-bold">Vocabank</a>
+            </header>
+            <ul class="dashboard-links-container">
+                <% for(let i = 0; i < 4; i++) { %>
+                    <li>
+                        <a href="/">
+                            <%-include('../partials/app-logo')%>
+                            <span data-link-label>Dashboard</span>
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
+        </aside>
+        <main>
+            <header>
+                <p data-path-display><%= locals.url.current %></p>
+            </header>
+        </main>
+    </section>
+
+
+<%-include('../layouts/root-foot')%>
