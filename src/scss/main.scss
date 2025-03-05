@@ -281,7 +281,7 @@ $medium-screen: 800px;
       align-items: center;
 
       @media (width >= $medium-screen) {
-        gap: 1em;
+        gap: 0.85em;
       }
 
       li {
@@ -300,10 +300,22 @@ $medium-screen: 800px;
           justify-content: left;
           align-items: center;
           text-align: center;
+          transition: background-color motions.$fast-transition-eio;
 
           @media (width >= $medium-screen) {
+            font-weight: typography.$font-semibold;
             flex-direction: row;
             justify-content: center;
+            padding: 0.25em 0.75em;
+            border-radius: 0.25em;
+
+            &:hover {
+              background-color: rgba(100, 100, 100, 0.25);
+            }
+
+            &.active {
+              background-color: rgba(150, 150, 150, 0.5);
+            }
           }
 
           svg {
@@ -339,6 +351,7 @@ $medium-screen: 800px;
       padding: 1em;
 
       p[data-path-display] {
+        display: inline-block;
         color: palette.$neutral;
         transition: all motions.$fast-transition-eio;
         cursor: pointer;
