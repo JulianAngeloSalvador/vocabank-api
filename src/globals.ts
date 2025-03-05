@@ -7,6 +7,16 @@ interface PathProps {
 const dashboard_paths: PathProps = {
   title: "dashboard",
   route: "/dashboard",
+  children: [
+    {
+      title: "words",
+      route: "/dashboard/words",
+    },
+    {
+      title: "translations",
+      route: "/dashboard/translations",
+    },
+  ],
 };
 
 const app_paths: PathProps = {

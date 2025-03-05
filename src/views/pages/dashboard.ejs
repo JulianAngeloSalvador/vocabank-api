@@ -1,3 +1,4 @@
+<% const loc = locals.url.current.split("/")[2] %>
 <%-include('../layouts/root-head')%>
 
     <section data-location="dashboard" class="content-container">
@@ -7,14 +8,21 @@
                 <a href="/" class="text-subtitle font-bold">Vocabank</a>
             </header>
             <ul class="dashboard-links-container">
-                <% for(let i = 0; i < 4; i++) { %>
                     <li>
-                        <a href="/">
+                        <a href="/dashboard" class="<%= locals.url.current === "/dashboard" ? 'active' : ''  %>">
                             <%-include('../partials/app-logo')%>
                             <span data-link-label>Dashboard</span>
                         </a>
                     </li>
-                <% } %>
+                <% locals.paths.dashboard_paths.children.map((path) => { %>
+                    <li>
+                        <a href="<%= path.route %>"
+                        class=" <%= loc === path.title ? 'active' : '' %>">
+                            <%-include('../partials/app-logo')%>
+                            <span data-link-label><%= path.title %></span>
+                        </a>
+                    </li>
+                <% }) %>
             </ul>
         </aside>
         <main>
