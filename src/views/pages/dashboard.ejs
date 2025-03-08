@@ -29,6 +29,17 @@
             <header>
                 <p data-path-display><%= locals.url.current %></p>
             </header>
+            <section class="dashboard-content">
+                <% if (locals.url.current === "/dashboard/words") { %>
+                    <div>WORDS</div>
+                <% } else if (locals.url.current === "/dashboard/translations") { %>
+                    <div>TRANSLATIONSSSSS</div>
+                <% } else if (locals.url.current === "/dashboard") { %>
+                    <div>dashyyyyyyyy</div>
+                <% } else { %>
+                    <div>Nothing to display</div>
+                <% } %>
+            </section>
         </main>
     </section>
 
