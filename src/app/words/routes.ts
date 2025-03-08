@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { getWords, getWord, searchWord } from "./controller";
+import { getWords } from "./controller";
 
 const router = Router();
 
 router.get("/", getWords);
-router.post("/view", getWord);
-router.get("/search", searchWord);
+// router.post("/view", getWord);
+// router.get("/search", searchWord);
 
 export { router as word_routes };
