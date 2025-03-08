@@ -60,3 +60,10 @@ $text-small: clamp(0.85rem, 1vw + 0.5rem, 1rem);
 .font-extrabold {
   font-weight: $font-extrabold;
 }
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}

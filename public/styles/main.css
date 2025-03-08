@@ -51,6 +51,14 @@
   font-weight: 900;
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
 *,
 *::before,
 *::after {
@@ -115,6 +123,7 @@ ol {
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
 }
 
