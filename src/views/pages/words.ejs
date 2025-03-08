@@ -12,8 +12,9 @@
         </header>
         <section class="main-content">
             <form action="/words/view" method="post" class="words-container">
-                <% words.map((word) => { %>
-                <button type="submit" value="<%= word.word_id%>" name="word"><%= word.english_word%></button>
+                <% words.map((item) => { %>
+                <% const { id, uuid, word } = item %>
+                <button type="submit" value="<%= uuid%>" name="word"><%= word%></button>
                 <% }) %>
             </form>
         </section>
