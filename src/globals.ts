@@ -1,3 +1,5 @@
+import utils from "./lib/utils";
+
 interface PathProps {
   title: string;
   route: string;
@@ -44,4 +46,5 @@ export const globals = {
     dashboard_paths,
   },
   url,
+  utils,
 };
